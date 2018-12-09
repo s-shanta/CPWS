@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ShedEditFragment">
+
+    <LinearLayout
+        android:id="@+id/shedEditNavigationButtonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/shedEditPrevBtn"
+            android:text="Previous"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/shedEditNextBtn"
+            tools:ignore="ButtonStyle"
+            android:text="Next" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/shedEditHomeBtn"
+            tools:ignore="ButtonStyle"
+            android:text="Home" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_above="@id/shedEditNavigationButtonContainer"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/shedEditTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Shed 0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shedEditTempTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature (&#xb0;C):" />
+
+            <EditText
+                android:id="@+id/shedEditTempEditText"
+                android:layout_width="wrap_content"
+                android:inputType="numberSigned"
+                android:layout_height="wrap_content"
+                android:hint="0-100"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shedEditHumidityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/humidity" />
+
+            <EditText
+                android:id="@+id/shedEditHumidityEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="0-100"
+                android:inputType="numberSigned" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shedEditAmmoniaTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ammonia (ppm):" />
+
+            <EditText
+                android:id="@+id/shedEditAmmoniaEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberSigned"
+                android:hint="0-1000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/shedEditTreatmentTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Treatment:" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/shedEditTreatmentSpinner"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:entries="@array/treatmentOptions"/>
+
+            <Button
+                android:text="save log entry"
+                android:layout_width="0dp"
+                android:id="@+id/shedEditSaveBtn"
+                android:layout_weight="2"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <Button
+            android:padding="16dp"
+            android:text="show log entries"
+            android:id="@+id/shedEditLogListShowBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>
